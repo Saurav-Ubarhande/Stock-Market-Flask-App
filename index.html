@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css"  type="text/css">
+    <link rel="shortcut icon" href="#">
+    <script src="static/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Assignment2</title>
+</head>
+<body>
+    <div class="heading">Stock Search</div>
+
+    <form id="search" class="search-bar" action="javascript:void(0)">
+        <button id="searchbutton" onclick="submitData()" class="search" type="submit" data-close>
+          <img id="searchimg" src="static/img/search-solid.svg">
+        </button>
+        <input  id="stockname" type="text" placeholder="Enter Stock Ticker Symbol" required>
+        <button id="closebutton" onclick="closebuttons()" class="close-button" type="button" data-close>
+          <img id="closeimg" src="static/img/times-solid.svg">
+        </button>
+    </form>
+    <div id="output"></div>
+
+    <div id="error"></div>
+    <div class="tab" id="tab">
+        <button class="tablinks" onclick="openCity(event, 'company')">Company</button>
+        <button class="tablinks" onclick="openCity(event, 'stocksummary')">Stock Summary</button>
+        <button class="tablinks" onclick="openCity(event, 'charts')">Charts</button>
+        <button class="tablinks" onclick="openCity(event, 'latestnews')">Latest News</button>
+      </div>
+
+      <div class="alltags">
+
+      <div id="company" class="tabcontent">
+        <image id="img1"></image>
+      </div>
+      
+      
+    
+      <div id="stocksummary" class="tabcontent">
+      <div id="stock"></div>
+
+        <table class="recommend" id="recommendation">
+          <tr><td id="StrongSell">Strong<br>Sell</td><td id="strongs"></td><td id="sell"></td><td id="hold"></td><td id="buy"></td><td id="strongb"></td><td id="StrongBuy">Strong<br>Buy</td></tr>
+        </table>
+      <p class="rt">Recommendation Trends</p>
+      </div>
+      
+      <div id="charts" class="tabcontent">
+        <div id="highcharts"></div>
+      </div>
+      
+      <div id="latestnews" class="tabcontent">
+        
+      </div>
+    </div>
+
+</body>
+</html>
